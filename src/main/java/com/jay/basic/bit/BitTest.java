@@ -31,6 +31,7 @@ public class BitTest
         System.out.println(longValue << 40); //9895604649984
         System.out.println(longValue << 60); //-8070450532247928832
 
+        System.out.println("----");
         byte b = -9;
         System.out.println(Integer.toBinaryString(b)); //自动提升为int类型, 11111111111111111111111111110111
         System.out.println(b << 1); //-18
