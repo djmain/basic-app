@@ -48,6 +48,8 @@ public class BitTest
         System.out.println(byteValue << 5);
         System.out.println(byteValue << 27); //1207959552
         System.out.println(byteValue << 28); //-1879048192
+        long value = byteValue << 28;
+        System.out.println(value); //-1879048192
 
         System.out.println("----");
         long longValue = 9L;
@@ -63,6 +65,9 @@ public class BitTest
         System.out.println(b << 2); //-36
     }
 
+    /**
+     * 右移
+     */
     @Test
     public void testRightMove()
     {
@@ -82,5 +87,30 @@ public class BitTest
         System.out.println(byteValue1 >> 3);  // -1
         System.out.println(byteValue1 >> 4);  // -1
         System.out.println(byteValue1 >> 20); // -1  (二进制:‭11111111111111111111111111111111 ‬//)
+    }
+
+
+    /**
+     * 无符号右移
+     */
+    @Test
+    public void testRightMoveNo()
+    {
+        byte byteValue = 8;
+        System.out.println(Integer.toBinaryString(byteValue)); //1000
+        System.out.println(byteValue >>> 1); // 4
+        System.out.println(byteValue >>> 2); // 2
+        System.out.println(byteValue >>> 3); // 1
+        System.out.println(byteValue >>> 4); // 0
+        System.out.println(byteValue >>> 5); // 0
+
+        System.out.println("----");
+        byte byteValue1 = -8;
+        System.out.println(Integer.toBinaryString(byteValue1)); //11111111111111111111111111111000
+        System.out.println(byteValue1 >>> 1);  // 2147483644
+        System.out.println(byteValue1 >>> 2);  // 1073741822
+        System.out.println(byteValue1 >>> 3);  // 536870911
+        System.out.println(byteValue1 >>> 4);  // 268435455
+        System.out.println(byteValue1 >>> 20); // 4095
     }
 }
